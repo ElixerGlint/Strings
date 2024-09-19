@@ -16,7 +16,7 @@ public class App {
             r = (int)(Math.random()*13); //[0-12]
             suit = getsuit(s);
             System.out.println(r + ", " + suit);
-        } while(!(r==11&&s==0));*/
+        } while(!(r==11&&s==0));
      
         double money = 0;
         for (int i = 0; i < 1000000; i++) { //average loss of 4 pennies per person.
@@ -32,10 +32,21 @@ public class App {
             }
         }
         System.out.println("money = " + money);
+    */
 
-
-
-
+    double pi = 4.0;
+    double div = 3;
+    for (int i = 0; i < 1000000; i++) {
+        if(i%2==0) {
+            pi -= 4/div;
+        }
+        else {
+            pi+= 4/div;
+        }
+        div +=2;
+    }
+    
+    System.out.println(pi);
     }
 
     public static char getsuit(int n) { //uses ASCII
