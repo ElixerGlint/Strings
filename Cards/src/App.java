@@ -36,7 +36,7 @@ public class App {
 
     double pi = 4.0;
     double div = 3;
-    for (int i = 0; i < 1000000; i++) {
+    for (int i = 0; i < 10000000; i++) {
         if(i%2==0) {
             pi -= 4/div;
         }
@@ -45,7 +45,7 @@ public class App {
         }
         div +=2;
     }
-    
+
     System.out.println(pi);
     }
 
