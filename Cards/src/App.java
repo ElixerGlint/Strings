@@ -1,26 +1,42 @@
 public class App {
     public static void main(String[] args) throws Exception {
         
-        int s = (int)(Math.random()*4);
-        int r = (int)(Math.random()*13); //[0-12]
-        char suit = getsuit(s);
+        //int s = (int)(Math.random()*4);
+        //int r = (int)(Math.random()*13); //[0-12]
+        //char suit = getsuit(s);
 
 
 
 
         //dealing out cards till you get a jack of hearts
-        System.out.println(r + 1 + ", " + suit);
-        
-        do { //1/48 odds
+        //System.out.println(r + 1 + ", " + suit);
+        /* 
+        do { //1/52 odds
             s = (int)(Math.random()*4);
             r = (int)(Math.random()*13); //[0-12]
             suit = getsuit(s);
             System.out.println(r + ", " + suit);
-        } while(!(r==11&&s==0));
-        
+        } while(!(r==11&&s==0));*/
+     
+        double money = 0;
+        for (int i = 0; i < 1000000; i++) { //average loss of 4 pennies per person.
+            money--;
+            int s = (int)(Math.random()*4);
+            int r = (int)(Math.random()*13); //[0-12]
+
+            if(s==2) {
+                money+=2;
+            }
+            if(r==0){
+                money+=6;
+            }
+        }
+        System.out.println("money = " + money);
+
+
+
+
     }
-
-
 
     public static char getsuit(int n) { //uses ASCII
         char finalvari;
