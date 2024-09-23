@@ -1,4 +1,4 @@
-public class App {
+public class Dice {
     public static void main(String[] args) throws Exception {
 
 
