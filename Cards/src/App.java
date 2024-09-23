@@ -1,5 +1,12 @@
 public class App {
     public static void main(String[] args) throws Exception {
+
+
+        System.out.println("hi");
+
+
+
+        
         //asd
         //int s = (int)(Math.random()*4);
         //int r = (int)(Math.random()*13); //[0-12]
@@ -32,7 +39,6 @@ public class App {
             }
         }
         System.out.println("money = " + money);
-    */
 
     double pi = 4.0;
     double div = 3;
@@ -63,7 +69,9 @@ public class App {
             default:
             finalvari = 0;
             return finalvari;
-        }
-    }
+     
+            }
+            */
 
+    }
 }
