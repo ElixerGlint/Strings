@@ -29,6 +29,11 @@ public class SlotMachineLab {
 
         System.out.println("Welcome to the casino. You have " + money + "$.");
         
+        if(money == 0.0) {
+            System.out.println("You cant gamble without money! Get a job!");
+            return 0.0;
+        }
+
         System.out.println("What is the bet amount: ");
         double bet = 1.0;
         do{
