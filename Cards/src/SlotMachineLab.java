@@ -15,7 +15,8 @@ public class SlotMachineLab {
         }
 
         while (gamemode == 2) {
-            System.out.println("Simulating is not set up yet");
+            System.out.println("Simulating is not set up yet.");
+            break;
         }
 
         input.close();
@@ -23,7 +24,7 @@ public class SlotMachineLab {
 
     public static void manuelgamble() throws Exception {
         Scanner input = new Scanner(System.in);
-        System.out.println("Welcome to the casino");
+        System.out.println("Welcome to the casino.");
 
         System.out.println("How much money do you have: ");
         double money = input.nextDouble();
