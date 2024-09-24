@@ -9,32 +9,39 @@ public class SlotMachineLab {
         double money = input.nextDouble();
 
         System.out.println("What is the bet amount: ");
-        double bet = input.nextDouble();
+        double bet = 1.0;
+        do{
+            if(bet > money)
+            System.out.println("You cant bet more than you have! What is your bet: ");
+            if(bet < 1)
+            System.out.println("You cant bet less than a dollar! What is your bet: ");
+            bet = input.nextDouble();
+        }while(bet > money || bet < 1);
 
-        gamble(money, bet);
+        gamble(money, bet, true);
         // 15 possibilities per wheel
 
     }
 
-    public static void gamble(double money, double bet) {
+    public static void gamble(double money, double bet, boolean showdisp) {
         System.out.println("gamble");
 
         int wheel1 = (int) (Math.random() * 15);
-        // 9 Ws, 3 Zs, 3 Xs
-        String letter1 = wheel1letter(wheel1);
-        String letter2 = wheel2letter(wheel2);
         int wheel2 = (int) (Math.random() * 15);
         int wheel3 = (int) (Math.random() * 15);
+        String letter1 = wheel1letter(wheel1);
+        String letter2 = wheel2letter(wheel2);
+        String letter3 = wheel3letter(wheel3);
 
 
-
+        if(showdisp) {
         System.out.println("_________________");
         System.out.println("|   LUCKY 777   |");
         System.out.println("|---------------|");
-        System.out.println("|   " + letter1 + "   " + letter2 + "   W   |");
+        System.out.println("|   " + letter1 + "   " + letter2 + "   " + letter3 + "   |");
         System.out.println("|---------------|");
         System.out.println("_________________");
-
+        }
     }
 
     public static String wheel1letter(int number) {
@@ -55,7 +62,28 @@ public class SlotMachineLab {
         if(number < 5 && number >= 0) {
             letter1 = "I";
         }
-        //broken rn
+        if(number < 10 && number >= 5) {
+            letter1 = "Y";
+        }
+        if(number < 13 && number >= 10) {
+            letter1 = "A";
+        }
+        if(number < 15 && number >= 13) {
+            letter1 = "O";
+        }
+        return letter1;
+    }
+    public static String wheel3letter(int number) {
+        String letter1 = "ERROR"; //prints error if it breaks
+        if(number < 6 && number >= 0) {
+            letter1 = "N";
+        }
+        if(number < 12 && number >= 6) {
+            letter1 = "M";
+        }
+        if(number < 15 && number >= 12) {
+            letter1 = "W";
+        }
         return letter1;
     }
 }
