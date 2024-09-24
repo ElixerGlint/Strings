@@ -66,13 +66,19 @@ public class SlotMachineLab {
         System.out.println(word);
 
         //does not register for some reason
-        if (word == "WIN") {
+        if (word.equals("WIN")) {
+
+            if(showdisp)
             System.out.println("5x payout! WIN!");
         }
-        if (word == "WAM") {
+        if (word.equals("WAM")) {
+
+            if(showdisp)
             System.out.println("10x payout! WAM!");
         }
-        if (word == "WOW") {
+        if (word.equals("WOW")) {
+
+            if(showdisp)
             System.out.println("20x payout! WIN!");
         }
     }
