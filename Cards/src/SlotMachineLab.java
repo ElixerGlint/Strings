@@ -3,6 +3,22 @@ import java.util.Scanner;
 public class SlotMachineLab {
     public static void main(String[] args) throws Exception {
         Scanner input = new Scanner(System.in);
+        System.out.println("Enter 1 to manually play, and 2 to simulate.");
+        int gamemode = input.nextInt();
+        while (gamemode == 1) {
+            manuelgamble();
+            System.out.println("Enter 1 to play again, and 0 to stop playing.");
+            int playagain = input.nextInt();
+            if (playagain != 1) {
+                break;
+            }
+        }
+
+        input.close();
+    }
+
+    public static void manuelgamble() throws Exception {
+        Scanner input = new Scanner(System.in);
         System.out.println("Welcome to the casino");
 
         System.out.println("How much money do you have: ");
@@ -20,16 +36,6 @@ public class SlotMachineLab {
 
         gamble(money, bet, true);
         // 15 possibilities per wheel
-
-
-
-
-
-
-
-
-
-        input.close();
     }
 
     public static void gamble(double money, double bet, boolean showdisp) {
@@ -55,11 +61,15 @@ public class SlotMachineLab {
         String word = letter1 + letter2 + letter3;
         System.out.println(word);
 
-        
-        if(word == "WIN") {
-            System.out.println("WIN!!! 5x Payout!!!");
+        if (word == "W" + "I" + "N") {
+            System.out.println("5x payout! WIN!");
         }
-
+        if (word == "WAM") {
+            System.out.println("10x payout! WAM!");
+        }
+        if (word == "WOW") {
+            System.out.println("20x payout! WIN!");
+        }
     }
 
     public static String wheel1letter(int number) {
