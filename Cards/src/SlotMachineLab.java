@@ -24,6 +24,10 @@ public class SlotMachineLab {
             break;
         }
 
+        
+
+
+
         input.close();
     }
 
@@ -48,7 +52,7 @@ public class SlotMachineLab {
         do{
             if(bet > money)
             System.out.println("You cant bet more than you have! What is your bet: ");
-            if(bet < 1)
+            if(bet < 1.0)
             System.out.println("You cant bet less than a dollar! What is your bet: ");
             bet = input.nextDouble();
         }while(bet > money || bet < 1);
