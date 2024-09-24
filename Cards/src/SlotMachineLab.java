@@ -14,6 +14,10 @@ public class SlotMachineLab {
             }
         }
 
+        while (gamemode == 2) {
+            System.out.println("Simulating is not set up yet");
+        }
+
         input.close();
     }
 
@@ -35,7 +39,6 @@ public class SlotMachineLab {
         }while(bet > money || bet < 1);
 
         gamble(money, bet, true);
-        // 15 possibilities per wheel
     }
 
     public static void gamble(double money, double bet, boolean showdisp) {
