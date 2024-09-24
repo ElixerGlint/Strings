@@ -24,10 +24,8 @@ public class SlotMachineLab {
 
     public static void manuelgamble() throws Exception {
         Scanner input = new Scanner(System.in);
-        System.out.println("Welcome to the casino.");
-
-        System.out.println("How much money do you have: ");
-        double money = input.nextDouble();
+        System.out.println("Welcome to the casino. You have 100$.");
+        double money = 100.0;
 
         System.out.println("What is the bet amount: ");
         double bet = 1.0;
