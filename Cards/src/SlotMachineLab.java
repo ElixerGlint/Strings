@@ -85,7 +85,6 @@ public class SlotMachineLab {
         }
         if (!(word.equals("WOW") || word.equals("WAM") || word.equals("WIN"))) {
             updatedmoney -=bet;
-            System.out.println("loss of money");
         }
 
         return updatedmoney;
