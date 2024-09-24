@@ -20,7 +20,19 @@ public class SlotMachineLab {
         }
 
         while (gamemode == 2) {
-            System.out.println("Simulating is not set up yet.");
+            money = 0;
+            System.out.println("How many rounds should I simulate (enter an interger)?");
+            int rounds = input.nextInt();
+
+            System.out.println("How much money will the bot gamble per turn");
+            double gambleamount = input.nextDouble();
+
+            double changeinmoney = 0.0;
+
+            for (int i = 0; i < rounds; i++) {
+                changeinmoney += autogamble(money, gambleamount);
+            }
+            System.out.println(changeinmoney);
             break;
         }
 
@@ -58,6 +70,13 @@ public class SlotMachineLab {
         }while(bet > money || bet < 1);
 
         money = gamble(money, bet, true);
+        
+        return money;
+    }
+
+    public static double autogamble(double money, double bet) { //-----------------------------------------------------------------------------------
+
+        money = gamble(money, bet, false);
         
         return money;
     }
