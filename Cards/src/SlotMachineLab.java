@@ -27,6 +27,12 @@ public class SlotMachineLab {
         input.close();
     }
 
+    public static void simulate() {
+        //simulation is run here
+
+
+    }
+
     public static double manuelgamble(double money) {
         Scanner input = new Scanner(System.in);
 
