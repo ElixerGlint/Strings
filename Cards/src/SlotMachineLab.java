@@ -5,8 +5,10 @@ public class SlotMachineLab {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter 1 to manually play, and 2 to simulate.");
         int gamemode = input.nextInt();
+        double money = 100.0;
+
         while (gamemode == 1) {
-            manuelgamble();
+            money = manuelgamble(money);
             System.out.println("Enter 1 to play again, and 0 to stop playing.");
             int playagain = input.nextInt();
             if (playagain != 1) {
@@ -22,11 +24,11 @@ public class SlotMachineLab {
         input.close();
     }
 
-    public static void manuelgamble() throws Exception {
+    public static double manuelgamble(double money) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Welcome to the casino. You have 100$.");
-        double money = 100.0;
 
+        System.out.println("Welcome to the casino. You have " + money + "$.");
+        
         System.out.println("What is the bet amount: ");
         double bet = 1.0;
         do{
@@ -37,12 +39,13 @@ public class SlotMachineLab {
             bet = input.nextDouble();
         }while(bet > money || bet < 1);
 
-        gamble(money, bet, true);
+        money = gamble(money, bet, true);
+        
+        return money;
     }
 
-    public static void gamble(double money, double bet, boolean showdisp) {
+    public static double gamble(double money, double bet, boolean showdisp) {
         System.out.println("gamble");
-
         int number1 = (int) (Math.random() * 15);
         int number2 = (int) (Math.random() * 15);
         int number3 = (int) (Math.random() * 15);
@@ -63,22 +66,29 @@ public class SlotMachineLab {
         String word = letter1 + letter2 + letter3;
         System.out.println(word);
 
+        double updatedmoney = money;
         //does not register for some reason
         if (word.equals("WIN")) {
-
+            updatedmoney += bet*5;
             if(showdisp)
             System.out.println("5x payout! WIN!");
         }
         if (word.equals("WAM")) {
-
+            updatedmoney += bet*10;
             if(showdisp)
             System.out.println("10x payout! WAM!");
         }
         if (word.equals("WOW")) {
-
+            updatedmoney += bet*20;
             if(showdisp)
             System.out.println("20x payout! WIN!");
         }
+        if (!(word.equals("WOW") || word.equals("WAM") || word.equals("WIN"))) {
+            updatedmoney -=bet;
+            System.out.println("loss of money");
+        }
+
+        return updatedmoney;
     }
 
     public static String wheel1letter(int number) {
