@@ -45,12 +45,12 @@ public class SlotMachineLab {
     public static void gamble(double money, double bet, boolean showdisp) {
         System.out.println("gamble");
 
-        int wheel1 = (int) (Math.random() * 15);
-        int wheel2 = (int) (Math.random() * 15);
-        int wheel3 = (int) (Math.random() * 15);
-        String letter1 = wheel1letter(wheel1);
-        String letter2 = wheel2letter(wheel2);
-        String letter3 = wheel3letter(wheel3);
+        int number1 = (int) (Math.random() * 15);
+        int number2 = (int) (Math.random() * 15);
+        int number3 = (int) (Math.random() * 15);
+        String letter1 = wheel1letter(number1);
+        String letter2 = wheel2letter(number2);
+        String letter3 = wheel3letter(number3);
 
 
         if(showdisp) {
@@ -65,7 +65,8 @@ public class SlotMachineLab {
         String word = letter1 + letter2 + letter3;
         System.out.println(word);
 
-        if (word == "W" + "I" + "N") {
+        //does not register for some reason
+        if (word == "WIN") {
             System.out.println("5x payout! WIN!");
         }
         if (word == "WAM") {
