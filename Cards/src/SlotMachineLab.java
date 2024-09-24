@@ -45,7 +45,7 @@ public class SlotMachineLab {
     }
 
     public static double gamble(double money, double bet, boolean showdisp) {
-        System.out.println("gamble");
+
         int number1 = (int) (Math.random() * 15);
         int number2 = (int) (Math.random() * 15);
         int number3 = (int) (Math.random() * 15);
@@ -64,7 +64,7 @@ public class SlotMachineLab {
         }
 
         String word = letter1 + letter2 + letter3;
-        System.out.println(word);
+
 
         double updatedmoney = money;
         //does not register for some reason
@@ -85,6 +85,8 @@ public class SlotMachineLab {
         }
         if (!(word.equals("WOW") || word.equals("WAM") || word.equals("WIN"))) {
             updatedmoney -=bet;
+            if(showdisp)
+            System.out.println("You lost your entire bet...");
         }
 
         return updatedmoney;
