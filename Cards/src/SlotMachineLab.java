@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
 public class SlotMachineLab {
+//questions: should the simulations simulate fresh games every time, or a continuous game as i have create in the manual mode.
+
     public static void main(String[] args) throws Exception {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter 1 to manually play, and 2 to simulate.");
