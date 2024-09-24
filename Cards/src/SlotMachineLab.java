@@ -21,6 +21,15 @@ public class SlotMachineLab {
         gamble(money, bet, true);
         // 15 possibilities per wheel
 
+
+
+
+
+
+
+
+
+        input.close();
     }
 
     public static void gamble(double money, double bet, boolean showdisp) {
@@ -42,6 +51,15 @@ public class SlotMachineLab {
         System.out.println("|---------------|");
         System.out.println("_________________");
         }
+
+        String word = letter1 + letter2 + letter3;
+        System.out.println(word);
+
+        
+        if(word == "WIN") {
+            System.out.println("WIN!!! 5x Payout!!!");
+        }
+
     }
 
     public static String wheel1letter(int number) {
