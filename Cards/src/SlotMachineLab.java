@@ -26,7 +26,7 @@ public class SlotMachineLab {
 
         while (gamemode == 2) { //automatic gambling
             money = 0;
-            System.out.println("How many rounds should I simulate (enter an interger)?");
+            System.out.println("How many rounds should I simulate (enter an interger)?"); //inputs
             int rounds = input.nextInt();
 
             System.out.println("How much money will the bot gamble per turn");
@@ -34,15 +34,15 @@ public class SlotMachineLab {
 
             double changeinmoney = 0.0;
 
-            for (int i = 0; i < rounds; i++) {
+            for (int i = 0; i < rounds; i++) { //auto gambling until the rounds have exausted
                 changeinmoney += autogamble(money, gambleamount);
             }
 
-            if(changeinmoney > 0)
+            if(changeinmoney > 0) //telling the results
                 System.out.println("You gained " + changeinmoney + "$!");
 
             if(changeinmoney < 0)
-                System.out.println("You lost " + changeinmoney + "$!"); 
+                System.out.println("You lost " + Math.abs(changeinmoney) + "$!"); 
             
             if(changeinmoney==0)
                 System.out.println("Somehow you stayed perfectly even on profit.");
@@ -52,44 +52,34 @@ public class SlotMachineLab {
         input.close();
     }
 
-    public static void simulate() {
-        //simulation is run here
-
-
-    }
-
-    public static double manuelgamble(double money) {
+    public static double manuelgamble(double money) { //manually gambling, with the money. Returns the final money amount
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Welcome to the casino. You have " + money + "$.");
-        
-        
+        System.out.println("Welcome to the casino. You have " + money + "$."); //welcoming the player
 
-        System.out.println("What is the bet amount: ");
+        System.out.println("What is the bet amount: "); //inputs
         double bet = 1.0;
         do{
-            if(bet > money)
+            if(bet > money) //fault protection
             System.out.println("You cant bet more than you have! What is your bet: ");
             if(bet < 1.0)
             System.out.println("You cant bet less than a dollar! What is your bet: ");
             bet = input.nextDouble();
         }while(bet > money || bet < 1);
 
-        money = gamble(money, bet, true);
+        money = gamble(money, bet, true); //gamble with the money
         
         return money;
     }
 
-    public static double autogamble(double money, double bet) { //-----------------------------------------------------------------------------------
-
+    public static double autogamble(double money, double bet) { //gamble the money (called in the for loop)
         money = gamble(money, bet, false);
-        
         return money;
     }
 
-    public static double gamble(double money, double bet, boolean showdisp) {
+    public static double gamble(double money, double bet, boolean showdisp) { //manual gamble
 
-        int number1 = (int) (Math.random() * 15);
+        int number1 = (int) (Math.random() * 15); //generating the slots
         int number2 = (int) (Math.random() * 15);
         int number3 = (int) (Math.random() * 15);
         String letter1 = wheel1letter(number1);
@@ -97,7 +87,7 @@ public class SlotMachineLab {
         String letter3 = wheel3letter(number3);
 
 
-        if(showdisp) {
+        if(showdisp) { //printing the terminal to look nice
         System.out.println("_________________");
         System.out.println("|   LUCKY 777   |");
         System.out.println("|---------------|");
@@ -106,27 +96,27 @@ public class SlotMachineLab {
         System.out.println("_________________");
         }
 
-        String word = letter1 + letter2 + letter3;
+        String word = letter1 + letter2 + letter3; //creating the word from the letters
 
 
         double updatedmoney = money;
         //does not register for some reason
-        if (word.equals("WIN")) {
-            updatedmoney += bet*5;
-            if(showdisp)
-            System.out.println("5x payout! WIN!");
+        if (word.equals("WIN")) { //determining payout/loss on the word
+            updatedmoney += bet*5; //updates the money with the payout
+            if(showdisp) //if the display is on
+            System.out.println("5x payout! WIN!"); //SAY CONGRATS!!!!
         }
-        if (word.equals("WAM")) {
+        if (word.equals("WAM")) { //^
             updatedmoney += bet*10;
             if(showdisp)
             System.out.println("10x payout! WAM!");
         }
-        if (word.equals("WOW")) {
+        if (word.equals("WOW")) {//^
             updatedmoney += bet*20;
             if(showdisp)
             System.out.println("20x payout! WIN!");
         }
-        if (!(word.equals("WOW") || word.equals("WAM") || word.equals("WIN"))) {
+        if (!(word.equals("WOW") || word.equals("WAM") || word.equals("WIN"))) { //^
             updatedmoney -=bet;
             if(showdisp)
             System.out.println("You lost your entire bet...");
@@ -135,7 +125,7 @@ public class SlotMachineLab {
         return updatedmoney;
     }
 
-    public static String wheel1letter(int number) {
+    public static String wheel1letter(int number) { //generates the first letter (based on predetermined odds)
         String letter1 = "ERROR"; //prints error if it breaks
         if(number < 9 && number >= 0) {
             letter1 = "W";
@@ -148,7 +138,7 @@ public class SlotMachineLab {
         }
         return letter1;
     }
-    public static String wheel2letter(int number) {
+    public static String wheel2letter(int number) {//generates the second letter
         String letter1 = "ERROR"; //prints error if it breaks
         if(number < 5 && number >= 0) {
             letter1 = "I";
@@ -164,7 +154,7 @@ public class SlotMachineLab {
         }
         return letter1;
     }
-    public static String wheel3letter(int number) {
+    public static String wheel3letter(int number) { //generates the third letter
         String letter1 = "ERROR"; //prints error if it breaks
         if(number < 6 && number >= 0) {
             letter1 = "N";
@@ -178,3 +168,4 @@ public class SlotMachineLab {
         return letter1;
     }
 }
+//:)
