@@ -4,15 +4,22 @@ public class SlotMachineLab {
 
     public static void main(String[] args) throws Exception {
         Scanner input = new Scanner(System.in);
+
         System.out.println("Enter 1 to manually play, and 2 to simulate.");
         int gamemode = input.nextInt();
         double money = 100.0;
 
         while (gamemode == 1) {
             money = manuelgamble(money);
+            if(money < 1) {
+                    System.out.println("You cant gamble without money! GET OUT!");
+                    break;
+                }
             System.out.println("Enter 1 to play again, and 0 to stop playing.");
             int playagain = input.nextInt();
             if (playagain != 1) {
+                if(playagain != 1)
+                    System.out.println("Come back soon!");
                 break;
             }
         }
@@ -42,10 +49,6 @@ public class SlotMachineLab {
             break;
         }
 
-        
-
-
-
         input.close();
     }
 
@@ -60,10 +63,7 @@ public class SlotMachineLab {
 
         System.out.println("Welcome to the casino. You have " + money + "$.");
         
-        if(money == 0.0) {
-            System.out.println("You cant gamble without money! Get a job!");
-            return 0.0;
-        }
+        
 
         System.out.println("What is the bet amount: ");
         double bet = 1.0;
