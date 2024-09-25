@@ -1,3 +1,7 @@
+//SlotMachineLab
+//9/25/24
+//Everett Rumery
+
 import java.util.Scanner; //imports
 
 public class SlotMachineLab {
