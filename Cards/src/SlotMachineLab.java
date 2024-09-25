@@ -6,25 +6,25 @@ public class SlotMachineLab {
         Scanner input = new Scanner(System.in); //creating the scanner
 
         System.out.println("Enter 1 to manually play, and 2 to simulate.");
-        int gamemode = input.nextInt();
+        int gamemode = input.nextInt(); //initializing variables
         double money = 100.0;
 
-        while (gamemode == 1) {
-            money = manuelgamble(money);
-            if(money < 1) {
+        while (gamemode == 1) { //manual gambling
+            money = manuelgamble(money); //calling the function to gamble, output is the ending money value.
+            if(money < 1) { //if they have no money, they get kicked out
                     System.out.println("You cant gamble without money! GET OUT!");
                     break;
                 }
-            System.out.println("Enter 1 to play again, and 0 to stop playing.");
+            System.out.println("Enter 1 to play again, and 0 to stop playing."); //asking the manuel player if they would like to play again
             int playagain = input.nextInt();
             if (playagain != 1) {
                 if(playagain != 1)
-                    System.out.println("Come back soon!");
+                    System.out.println("Come back soon!"); //if they leave, you gotta thank them for coming, in hopes they come back
                 break;
             }
         }
 
-        while (gamemode == 2) {
+        while (gamemode == 2) { //automatic gambling
             money = 0;
             System.out.println("How many rounds should I simulate (enter an interger)?");
             int rounds = input.nextInt();
