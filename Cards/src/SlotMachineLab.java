@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class SlotMachineLab {
 //questions: should the simulations simulate fresh games every time, or a continuous game as i have create in the manual mode.
 //Currently when you win you get your money back on top of the prize
+//done
 
     public static void main(String[] args) throws Exception {
         Scanner input = new Scanner(System.in);
