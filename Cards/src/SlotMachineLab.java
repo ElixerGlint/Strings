@@ -1,9 +1,9 @@
-import java.util.Scanner;
+import java.util.Scanner; //imports
 
 public class SlotMachineLab {
 
-    public static void main(String[] args) throws Exception {
-        Scanner input = new Scanner(System.in);
+    public static void main(String[] args) throws Exception { //main loop
+        Scanner input = new Scanner(System.in); //creating the scanner
 
         System.out.println("Enter 1 to manually play, and 2 to simulate.");
         int gamemode = input.nextInt();
