@@ -30,7 +30,15 @@ public class SlotMachineLab {
             for (int i = 0; i < rounds; i++) {
                 changeinmoney += autogamble(money, gambleamount);
             }
-            System.out.println(changeinmoney);
+
+            if(changeinmoney > 0)
+                System.out.println("You gained " + changeinmoney + "$!");
+
+            if(changeinmoney < 0)
+                System.out.println("You lost " + changeinmoney + "$!"); 
+            
+            if(changeinmoney==0)
+                System.out.println("Somehow you stayed perfectly even on profit.");
             break;
         }
 
