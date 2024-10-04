@@ -9,7 +9,10 @@ public class Strings {
 
         // compareTo
         String A = "A";
-        String B = "B";
+        String B = "B";//a - b
+        System.out.println(A.compareTo(B)); //shoud be -1, based on numerical values of the characters
+        System.out.println(str.compareTo("Hey")); //-13 because first difference, then kicks out
+        System.out.println("A".compareTo("a")); //uppercase letters come before lowercase in unicode
 
     } // close main
 } // close class
