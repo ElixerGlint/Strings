@@ -16,8 +16,27 @@ public class Strings {
         System.out.println("Cat".compareTo("Cataract")); //ran out of chars to compare, so it compares their counts
         */
 
-
+        //snatch up every third word to create
+        String scentance = "Ive been workingo on the railroad all the live long day";
+        System.out.println(thirdWord(scentance));
 
 
     } // close main
+
+    public static String thirdWord(String scentance) {
+        int space = scentance.indexOf(' ');
+        String output = "";
+        if(space == -1) {
+            return output;
+        }
+
+
+
+
+
+
+        
+
+        return output;
+    }
 } // close class
