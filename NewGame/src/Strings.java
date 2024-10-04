@@ -1,5 +1,12 @@
+
 public class Strings {
     public static void main(String[] args) throws Exception {
+
+        System.out.println(anagram("hello"));
+        
+        
+        
+        
         /* 
         String str = "Hello World";
         String str2 = "Hello World";
@@ -17,11 +24,32 @@ public class Strings {
         */
 
         //snatch up every third word to create
-        String scentance = "Ive been workingg on the railroad all the live long day yipee";
-        System.out.println(thirdWord(scentance));
-
-
+        //String scentance = "Ive been workingg on the railroad all the live long day yipee";
+        //System.out.println(thirdWord(scentance));
     } // close main
+
+
+
+
+    public static String anagram(String startingword) {
+        String output = "";
+        int random = (int)Math.random()*startingword.length();
+        
+
+        return output;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
     public static String thirdWord(String scentance) {
         String output = "";
