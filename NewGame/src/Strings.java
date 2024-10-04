@@ -17,25 +17,39 @@ public class Strings {
         */
 
         //snatch up every third word to create
-        String scentance = "Ive been workingo on the railroad all the live long day";
+        String scentance = "Ive been workingg on the railroad all the live long day yipee";
         System.out.println(thirdWord(scentance));
 
 
     } // close main
 
     public static String thirdWord(String scentance) {
-        int space = scentance.indexOf(' ');
         String output = "";
+        int space = scentance.indexOf(' ');
         if(space == -1) {
             return output;
         }
+        space = scentance.indexOf(' ',space+1);
+        if(space == -1) {
+            return output;
+        }
+        int counter = 2;
+        scentance+= " ";
 
 
+        while(true) {
 
+            int nextspace = scentance.indexOf(' ',space+1);
+            if(counter%3 ==2){
+                output+= scentance.substring(space+1, nextspace+1);
+            }
 
-
-
-        
+            space = nextspace;
+            if(space == scentance.length()-1) {
+                break;
+            }
+            counter++;
+    }
 
         return output;
     }
