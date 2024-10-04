@@ -33,9 +33,12 @@ public class Strings {
 
     public static String anagram(String startingword) {
         String output = "";
-        int random = (int)Math.random()*startingword.length();
         
 
+        for(int i = 0; i < startingword.length(); i++){
+        int random = (int)Math.random()*startingword.length();
+        output = output.substring(0,random) + startingword.substring(random+1) + startingword.charAt(random);
+        }
         return output;
     }
 
