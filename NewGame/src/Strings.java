@@ -1,4 +1,4 @@
-public class newGame {
+public class Strings {
     public static void main(String[] args) throws Exception {
 	int asd = 1;
 
